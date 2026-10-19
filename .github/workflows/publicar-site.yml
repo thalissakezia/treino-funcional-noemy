@@ -1,0 +1,77 @@
+name: Publicar site Noemy
+# Suba imagens-noemy.zip na raiz; esta automação extrai e publica automaticamente.
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'index.html'
+      - 'imagens-noemy.zip'
+      - 'imagens/**'
+      - '.github/workflows/publicar-site.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: noemy-github-pages
+  cancel-in-progress: true
+
+jobs:
+  publicar:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Obter código do site
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - name: Preparar as ilustrações da Noemy
+        id: assets
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [ -f imagens-noemy.zip ]; then
+            unzip -t imagens-noemy.zip >/dev/null
+            unzip -o -q imagens-noemy.zip -d .
+            mkdir -p imagens
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add imagens
+            if ! git diff --cached --quiet; then
+              git commit -m "assets: extrair ilustracoes da Noemy"
+              git push origin HEAD:main
+            fi
+          fi
+          if [ -f imagens/seg_1.webp ] && [ -f imagens/sab_5.webp ] && [ -f imagens/sab_ficha.webp ]; then
+            echo 'ready=true' >> "$GITHUB_OUTPUT"
+          else
+            echo 'ready=false' >> "$GITHUB_OUTPUT"
+            echo 'Ilustrações ainda não enviadas. Faça upload de imagens-noemy.zip na raiz do repositório.'
+          fi
+      - name: Preparar arquivos da publicação
+        if: steps.assets.outputs.ready == 'true'
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p _site
+          cp index.html _site/index.html
+          cp -R imagens _site/imagens
+          touch _site/.nojekyll
+          test -f _site/imagens/seg_1.webp
+      - name: Configurar GitHub Pages
+        if: steps.assets.outputs.ready == 'true'
+        uses: actions/configure-pages@v5
+      - name: Enviar arquivos
+        if: steps.assets.outputs.ready == 'true'
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: _site
+      - name: Publicar
+        if: steps.assets.outputs.ready == 'true'
+        id: deployment
+        uses: actions/deploy-pages@v4
