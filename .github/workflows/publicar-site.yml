@@ -41,6 +41,16 @@ jobs:
           cp index.html _site/index.html
           mkdir -p _site/imagens
           cp imagens/*.webp imagens/*.svg _site/imagens/
+          # Publicar somente as novas ilustrações com fundo branco
+          for nome in \
+            "Sentar e levantar.png" \
+            "Elevação de panturrilhas.png" \
+            "Flexão na parede.png" \
+            "Remada com garrafas.png" \
+            "Abdominal em pé.png"; do
+            test -s "imagens/$nome" || { echo "Ilustração ausente: $nome"; exit 1; }
+            cp "imagens/$nome" _site/imagens/
+          done
           touch _site/.nojekyll
       - name: Configurar GitHub Pages
         uses: actions/configure-pages@v5
