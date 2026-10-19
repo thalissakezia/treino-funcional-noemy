@@ -1,0 +1,209 @@
+{
+  "perfil": {
+    "nome": "Noemy",
+    "sexo": "feminino",
+    "idade": 53,
+    "peso_inicial_kg": 70.15,
+    "altura_m": 1.6
+  },
+  "objetivo": "Treino funcional em casa com foco em mobilidade, força leve, equilíbrio e condicionamento, adequado para iniciante de 53 anos.",
+  "dias": {
+    "segunda": [
+      {
+        "ordem": 1,
+        "exercicio": "Sentar e levantar da cadeira",
+        "arquivo": "seg_01_sentar_levantar_cadeira.png",
+        "repeticoes": "2 x 10"
+      },
+      {
+        "ordem": 2,
+        "exercicio": "Elevação de panturrilha com apoio",
+        "arquivo": "seg_02_elevacao_panturrilha_apoio.png",
+        "repeticoes": "2 x 12"
+      },
+      {
+        "ordem": 3,
+        "exercicio": "Elevação lateral da perna",
+        "arquivo": "seg_03_elevacao_lateral_perna.png",
+        "repeticoes": "2 x 10 por lado"
+      },
+      {
+        "ordem": 4,
+        "exercicio": "Ponte de glúteos",
+        "arquivo": "seg_04_ponte_gluteos.png",
+        "repeticoes": "2 x 10"
+      },
+      {
+        "ordem": 5,
+        "exercicio": "Mobilidade do tornozelo",
+        "arquivo": "seg_05_mobilidade_tornozelo.png",
+        "repeticoes": "40 s"
+      }
+    ],
+    "terca": [
+      {
+        "ordem": 1,
+        "exercicio": "Flexão na parede",
+        "arquivo": "ter_01_flexao_parede.png",
+        "repeticoes": "2 x 10"
+      },
+      {
+        "ordem": 2,
+        "exercicio": "Remada com garrafas leves",
+        "arquivo": "ter_02_remada_garrafas.png",
+        "repeticoes": "2 x 10"
+      },
+      {
+        "ordem": 3,
+        "exercicio": "Desenvolvimento de ombros com garrafas leves",
+        "arquivo": "ter_03_desenvolvimento_ombros.png",
+        "repeticoes": "2 x 8"
+      },
+      {
+        "ordem": 4,
+        "exercicio": "Elevação frontal com garrafas leves",
+        "arquivo": "ter_04_elevacao_frontal.png",
+        "repeticoes": "2 x 8"
+      },
+      {
+        "ordem": 5,
+        "exercicio": "Retração escapular / postura",
+        "arquivo": "ter_05_postura_retracao_escapular.png",
+        "repeticoes": "2 x 12"
+      }
+    ],
+    "quarta": [
+      {
+        "ordem": 1,
+        "exercicio": "Caminhada confortável",
+        "arquivo": "qua_01_caminhada_confortavel.png",
+        "repeticoes": "12 a 20 min"
+      },
+      {
+        "ordem": 2,
+        "exercicio": "Marcha com elevação de joelho",
+        "arquivo": "qua_02_marcha_joelho.png",
+        "repeticoes": "2 x 40 s"
+      },
+      {
+        "ordem": 3,
+        "exercicio": "Passo lateral",
+        "arquivo": "qua_03_passo_lateral.png",
+        "repeticoes": "2 x 40 s"
+      },
+      {
+        "ordem": 4,
+        "exercicio": "Equilíbrio com apoio",
+        "arquivo": "qua_04_equilibrio_apoio.png",
+        "repeticoes": "2 x 20 s por lado"
+      },
+      {
+        "ordem": 5,
+        "exercicio": "Alongamento lateral",
+        "arquivo": "qua_05_alongamento_lateral.png",
+        "repeticoes": "2 x 30 s"
+      }
+    ],
+    "quinta": [
+      {
+        "ordem": 1,
+        "exercicio": "Abdominal em pé",
+        "arquivo": "qui_01_abdominal_em_pe.png",
+        "repeticoes": "2 x 8 por lado"
+      },
+      {
+        "ordem": 2,
+        "exercicio": "Ativação abdominal guiada",
+        "arquivo": "qui_02_ativacao_abdominal.png",
+        "repeticoes": "2 x 20 s"
+      },
+      {
+        "ordem": 3,
+        "exercicio": "Bird-dog adaptado",
+        "arquivo": "qui_03_bird_dog_adaptado.png",
+        "repeticoes": "2 x 8 por lado"
+      },
+      {
+        "ordem": 4,
+        "exercicio": "Mobilidade do quadril",
+        "arquivo": "qui_04_mobilidade_quadril.png",
+        "repeticoes": "2 x 40 s"
+      },
+      {
+        "ordem": 5,
+        "exercicio": "Ponte de glúteos",
+        "arquivo": "qui_05_ponte_gluteos.png",
+        "repeticoes": "2 x 10"
+      }
+    ],
+    "sexta": [
+      {
+        "ordem": 1,
+        "exercicio": "Meio agachamento com apoio na cadeira",
+        "arquivo": "sex_01_meio_agachamento_apoio.png",
+        "repeticoes": "2 x 10"
+      },
+      {
+        "ordem": 2,
+        "exercicio": "Sentar e levantar da cadeira",
+        "arquivo": "sex_02_sentar_levantar_cadeira.png",
+        "repeticoes": "2 x 10"
+      },
+      {
+        "ordem": 3,
+        "exercicio": "Elevação de panturrilha com apoio",
+        "arquivo": "sex_03_elevacao_panturrilha_apoio.png",
+        "repeticoes": "2 x 12"
+      },
+      {
+        "ordem": 4,
+        "exercicio": "Remada com garrafas leves",
+        "arquivo": "sex_04_remada_garrafas.png",
+        "repeticoes": "2 x 10"
+      },
+      {
+        "ordem": 5,
+        "exercicio": "Equilíbrio com apoio",
+        "arquivo": "sex_05_equilibrio_apoio.png",
+        "repeticoes": "2 x 20 s por lado"
+      }
+    ],
+    "sabado": [
+      {
+        "ordem": 1,
+        "exercicio": "Caminhada confortável",
+        "arquivo": "sab_01_caminhada_confortavel.png",
+        "repeticoes": "10 a 20 min"
+      },
+      {
+        "ordem": 2,
+        "exercicio": "Passo lateral",
+        "arquivo": "sab_02_passo_lateral.png",
+        "repeticoes": "2 x 40 s"
+      },
+      {
+        "ordem": 3,
+        "exercicio": "Marcha com elevação de joelho",
+        "arquivo": "sab_03_marcha_joelho.png",
+        "repeticoes": "2 x 40 s"
+      },
+      {
+        "ordem": 4,
+        "exercicio": "Flexão na parede",
+        "arquivo": "sab_04_flexao_parede.png",
+        "repeticoes": "2 x 10"
+      },
+      {
+        "ordem": 5,
+        "exercicio": "Alongamento lateral",
+        "arquivo": "sab_05_alongamento_lateral.png",
+        "repeticoes": "2 x 30 s"
+      }
+    ]
+  },
+  "observacoes": [
+    "Começar leve nas primeiras 2 semanas; descansar 45 a 90 segundos entre séries.",
+    "Interromper o exercício em caso de dor forte, tontura ou falta de ar fora do normal.",
+    "A caminhada pode ser fracionada em 2 blocos menores, se necessário."
+  ]
+}

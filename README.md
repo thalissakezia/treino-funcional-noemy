@@ -1,34 +1,58 @@
-# Treino funcional da Noemy
+# Treino funcional da Noemy — ativos para repositório
 
-Site independente do treino do Flávio, baseado no mesmo layout: 6 dias de treino com ilustrações, progressão semanal, controles dos exercícios, histórico de pesagens e login por e-mail.
+Este pacote é uma cópia independente do projeto do Flávio e foi preparado para o repositório `treino-funcional-noemy`.
 
-**Perfil usado para planejar os exercícios:** mulher, 53 anos, 1,60 m e 70,15 kg iniciais. Os treinos são sugestões para iniciante, com força leve, mobilidade, equilíbrio e caminhadas. Começar com 1 série e avançar se confortável. Em caso de sintomas ou doenças que limitem esforço, buscar avaliação profissional.
+## Perfil base
+- Mulher
+- 53 anos
+- 70,15 kg
+- 1,60 m
+- Foco: força leve, mobilidade, equilíbrio e condicionamento
 
-## Como publicar: só falta o ZIP e ativar o Pages
+## Estrutura sugerida da semana
+### Segunda — Pernas e mobilidade
+1. Sentar e levantar da cadeira — 2 x 10  
+2. Elevação de panturrilha com apoio — 2 x 12  
+3. Elevação lateral da perna — 2 x 10 por lado  
+4. Ponte de glúteos — 2 x 10  
+5. Mobilidade do tornozelo — 40 s  
 
-1. Baixe o arquivo **imagens-noemy.zip** fornecido no ChatGPT.
-2. No repositório [treino-funcional-noemy](https://github.com/thalissakezia/treino-funcional-noemy), escolha **Add file → Upload files**, selecione o arquivo ZIP *sem extrair*, na raiz (ao lado do `index.html`) e toque em **Commit changes**. A automação `publicar-site.yml` extrai as 30 imagens dos exercícios e as 6 fichas ilustradas para a pasta `imagens/`. Não envie o ZIP antigo chamado `noemy_treino_repo_assets.zip`: ele tem nomes diferentes dos esperados pelo site.
-3. Em **Settings → Pages → Build and deployment → Source**, selecione **GitHub Actions** (é uma configuração única). Depois, em **Actions**, veja a automação **Publicar site Noemy**. Se necessário, use **Run workflow**.
-4. O endereço publicado será `https://thalissakezia.github.io/treino-funcional-noemy/`.
+### Terça — Braços e postura
+1. Flexão na parede — 2 x 10  
+2. Remada com garrafas leves — 2 x 10  
+3. Desenvolvimento de ombros com garrafas leves — 2 x 8  
+4. Elevação frontal com garrafas leves — 2 x 8  
+5. Retração escapular / postura — 2 x 12  
 
-## Login e sincronização na nuvem
+### Quarta — Caminhada e cardio leve
+1. Caminhada confortável — 12 a 20 min  
+2. Marcha com elevação de joelho — 2 x 40 s  
+3. Passo lateral — 2 x 40 s  
+4. Equilíbrio com apoio — 2 x 20 s por lado  
+5. Alongamento lateral — 2 x 30 s  
 
-O site usa o projeto Supabase gratuito que já existe, com tabelas **exclusivas da Noemy**, separadas das tabelas do Flávio:
+### Quinta — Centro do corpo e mobilidade
+1. Abdominal em pé — 2 x 8 por lado  
+2. Ativação abdominal guiada — 2 x 20 s  
+3. Bird-dog adaptado — 2 x 8 por lado  
+4. Mobilidade do quadril — 2 x 40 s  
+5. Ponte de glúteos — 2 x 10  
 
-- `noemy_training_profile`
-- `noemy_daily_weights`
-- `noemy_exercise_progress`
+### Sexta — Corpo inteiro com apoio
+1. Meio agachamento com apoio na cadeira — 2 x 10  
+2. Sentar e levantar da cadeira — 2 x 10  
+3. Elevação de panturrilha com apoio — 2 x 12  
+4. Remada com garrafas leves — 2 x 10  
+5. Equilíbrio com apoio — 2 x 20 s por lado  
 
-As tabelas têm políticas RLS: cada conta vê apenas os próprios registros. Use um Gmail diferente para Noemy, e não compartilhe links de autenticação.
+### Sábado — Circuito leve
+1. Caminhada confortável — 10 a 20 min  
+2. Passo lateral — 2 x 40 s  
+3. Marcha com elevação de joelho — 2 x 40 s  
+4. Flexão na parede — 2 x 10  
+5. Alongamento lateral — 2 x 30 s  
 
-**Ação no Supabase:** em **Authentication → URL Configuration → Redirect URLs**, acrescente exatamente `https://thalissakezia.github.io/treino-funcional-noemy/**`. Mantenha a URL do Flávio, não substitua! O Site URL padrão pode permanecer o do Flávio pois o site da Noemy informa o `redirect_to` completo.
-
-**Brevo:** não é necessária outra conta ou outra chave SMTP. A configuração de e-mail transacional existente é compartilhada pelo Supabase.
-
-## Observações sobre as imagens
-
-Todas as imagens são individualizadas e usam o personagem feminino da Noemy. A exibição mantém a imagem inteira, com as duas posições do movimento quando disponíveis. Algumas imagens de movimentos repetidos são reutilizadas em dias diferentes.
-
-## Manutenção
-
-Edite `index.html` e/ou as imagens sem alterar o repositório do Flávio. O código e as ilustrações são públicos; os registros pessoais de exercícios e pesos ficam no banco autenticado, não no GitHub.
+## Sugestão para o repositório
+- Coloque as imagens dentro da pasta `imagens/`
+- Use o arquivo `plano_treino_noemy.json` para mapear dias, exercícios e arquivos
+- Este pacote não substitui o projeto do Flávio
