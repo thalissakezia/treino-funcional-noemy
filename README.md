@@ -1,58 +1,45 @@
-# Treino funcional da Noemy — ativos para repositório
+# Treino funcional da Noemy
 
-Este pacote é uma cópia independente do projeto do Flávio e foi preparado para o repositório `treino-funcional-noemy`.
+Site independente do [Treino do Flávio](https://github.com/thalissakezia/treino-funcional-flavio), com treinos ilustrados de segunda a sábado, acompanhamento das semanas, peso diário, login por Gmail e sincronização.
 
-## Perfil base
-- Mulher
-- 53 anos
-- 70,15 kg
-- 1,60 m
-- Foco: força leve, mobilidade, equilíbrio e condicionamento
+**Perfil inicial:** mulher, 53 anos, 1,60 m, 70,15 kg. A proposta é começar com intensidade leve, sem saltos, priorizando força, mobilidade, equilíbrio e caminhada. O site exibe adaptações para a semana 1 e progressão gradual.
 
-## Estrutura sugerida da semana
-### Segunda — Pernas e mobilidade
-1. Sentar e levantar da cadeira — 2 x 10  
-2. Elevação de panturrilha com apoio — 2 x 12  
-3. Elevação lateral da perna — 2 x 10 por lado  
-4. Ponte de glúteos — 2 x 10  
-5. Mobilidade do tornozelo — 40 s  
+## Estrutura organizada
 
-### Terça — Braços e postura
-1. Flexão na parede — 2 x 10  
-2. Remada com garrafas leves — 2 x 10  
-3. Desenvolvimento de ombros com garrafas leves — 2 x 8  
-4. Elevação frontal com garrafas leves — 2 x 8  
-5. Retração escapular / postura — 2 x 12  
+- `index.html`: site principal, com programa, instruções e interface.
+- `imagens/`: as **30 imagens de exercícios**, **6 guias ilustrados** e ilustração de espera. O site carrega diretamente desta pasta.
+- `fontes-ilustracoes/`: arquivos PNG originais preservados para futuras edições (não entram na publicação).
+- `plano_treino_noemy.json`: arquivo recebido como referência de planejamento; o programa efetivamente usado está no `index.html`.
+- `.github/workflows/publicar-site.yml`: verifica a existência das 36 imagens e publica automaticamente.
 
-### Quarta — Caminhada e cardio leve
-1. Caminhada confortável — 12 a 20 min  
-2. Marcha com elevação de joelho — 2 x 40 s  
-3. Passo lateral — 2 x 40 s  
-4. Equilíbrio com apoio — 2 x 20 s por lado  
-5. Alongamento lateral — 2 x 30 s  
+**Não é preciso enviar outro ZIP.** Os arquivos já estão organizados no repositório.
 
-### Quinta — Centro do corpo e mobilidade
-1. Abdominal em pé — 2 x 8 por lado  
-2. Ativação abdominal guiada — 2 x 20 s  
-3. Bird-dog adaptado — 2 x 8 por lado  
-4. Mobilidade do quadril — 2 x 40 s  
-5. Ponte de glúteos — 2 x 10  
+## Falta ativar GitHub Pages
 
-### Sexta — Corpo inteiro com apoio
-1. Meio agachamento com apoio na cadeira — 2 x 10  
-2. Sentar e levantar da cadeira — 2 x 10  
-3. Elevação de panturrilha com apoio — 2 x 12  
-4. Remada com garrafas leves — 2 x 10  
-5. Equilíbrio com apoio — 2 x 20 s por lado  
+A ação de publicação executou a validação dos arquivos, mas a etapa **Configurar GitHub Pages** não pôde prosseguir porque o Pages deste repositório ainda não está habilitado.
 
-### Sábado — Circuito leve
-1. Caminhada confortável — 10 a 20 min  
-2. Passo lateral — 2 x 40 s  
-3. Marcha com elevação de joelho — 2 x 40 s  
-4. Flexão na parede — 2 x 10  
-5. Alongamento lateral — 2 x 30 s  
+1. Abra [Settings → Pages](https://github.com/thalissakezia/treino-funcional-noemy/settings/pages).
+2. Em **Build and deployment → Source**, selecione **GitHub Actions**. Salve, se aparecer o botão.
+3. Se não publicar automaticamente, abra [Actions](https://github.com/thalissakezia/treino-funcional-noemy/actions/workflows/publicar-site.yml) e execute **Run workflow**.
 
-## Sugestão para o repositório
-- Coloque as imagens dentro da pasta `imagens/`
-- Use o arquivo `plano_treino_noemy.json` para mapear dias, exercícios e arquivos
-- Este pacote não substitui o projeto do Flávio
+Após a publicação, o endereço será **https://thalissakezia.github.io/treino-funcional-noemy/**.
+
+## Login e sincronização privados
+
+O Supabase existente já possui tabelas separadas, com políticas de acesso por usuário:
+
+- `noemy_training_profile`
+- `noemy_daily_weights`
+- `noemy_exercise_progress`
+
+Não é preciso criar outro projeto Supabase nem nova conta no Brevo. No Supabase, em **Authentication → URL Configuration → Redirect URLs**, **adicione**:
+
+`https://thalissakezia.github.io/treino-funcional-noemy/**`
+
+Não apague a URL do Flávio. O site informa o endereço completo da Noemy ao solicitar o link de login. A pessoa usa o próprio e-mail, sem misturar os registros do Flávio.
+
+**Segurança:** nunca publique tokens, links de login, chaves secretas ou dados pessoais no repositório público. O histórico de peso é guardado no dispositivo e, quando conectado, sincronizado com as tabelas privadas.
+
+## Cuidados
+
+Para uma pessoa que inicia atividade física aos 53 anos, respeite o condicionamento. Em caso de sintomas, doenças ou limitações, procure avaliação profissional. Não existe garantia de perda de peso específica, definição ou ausência de flacidez em 30 dias.
